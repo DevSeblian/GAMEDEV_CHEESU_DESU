@@ -5,7 +5,7 @@ using UnityEngine;
 public class BoxMoving : MonoBehaviour
 {
 
-    [SerializeField] public float Speed = 2.0f;
+    [SerializeField] public float Speed = 30.0f;
 
     [SerializeField] public int uturn = 45;
 

@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class FillMinigame : MonoBehaviour
 {
+
+    [SerializeField] BoxMoving box;
 
     [SerializeField] public GameObject meter;
     [SerializeField] public GameObject movingBox;
@@ -14,12 +18,14 @@ public class FillMinigame : MonoBehaviour
     [SerializeField] public int meterFill;
     [SerializeField] public int meterLoss;
 
+    [SerializeField] public float randomSpeed = 20.0f;
+
     private bool SpacePressed;
 
     // Start is called before the first frame update
     void Start()
     {
-        //meterAmt = 0;
+        meterAmt = 0;
     }
 
     // Update is called once per frame
@@ -70,6 +76,9 @@ public class FillMinigame : MonoBehaviour
                     meterAmt = meterMax;
 
                 }
+
+                box.Speed += Random.Range(-randomSpeed, randomSpeed);
+                Debug.Log("Box speed at " + box.Speed);
 
             }
             else
